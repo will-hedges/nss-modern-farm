@@ -2,6 +2,7 @@ import { createPlan } from "./plan.js";
 import { usePlants } from "./field.js";
 import { plantSeeds } from "./tractor.js";
 import { harvestPlants } from "./harvester.js";
+import { Catalog } from "./catalog.js";
 
 console.log("Welcome to the main module");
 
@@ -17,4 +18,6 @@ const plantedPlants = usePlants();
 // harvest the planted plants
 const harvest = harvestPlants(plantedPlants);
 
-console.log(harvest);
+// create the catalog, and put the catalog on the page
+const parentHTMLElement = document.querySelector(".container");
+parentHTMLElement.innerHTML = Catalog(harvest);
